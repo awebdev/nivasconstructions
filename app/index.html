@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nivas Constructions</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="dist/main.min.css" />
+  </head>
+  <body>
+    <header ng-controller="HeaderCtrl as headerCtrl" ng-cloak>
+      <div class="logo">
+        <img src="/app/images/logo.png" alt="Nivas Constructions"/>
+      </div>
+      <div class="menu">
+        <ul>
+          <a class="items" ng-repeat="link in links" href="#/{{link.url}}">{{link.title}}</a>
+        </ul>
+      </div>
+    </header>
+
+    <div id="content" class="content">
+      <div ng-view></div>
+    </div>
+
+    <footer></footer>
+
+    <!-- Embedd requireJs -->
+    <script data-main="/app/js/index" src="/app/components/requirejs/require.js"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<div ng-controller="ProjectsCtrl as projectsCtrl" ng-cloak>
+  <div class="projects" ng-repeat="project in projects | orderBy:'startDate':'reverse'">
+    <div class="client">{{project.client}}</div>
+    <div class="clientWrap">
+      <div class="title">{{project.title}}</div>
+      <div class="timePeriod">
+        {{project.startDateReadable}} - {{project.endDateReadable}}
+      </div>
+    </div>
+    <p class="description">{{project.description}}</p>
+    <div class="tasks">
+      <h3>
+        <a href ng-click="showHideHighlights = !showHideHighlights" class="text">
+          <span class="grey" ng-show="!showHideHighlights">+</span>
+          <span class="grey" ng-show="showHideHighlights">-</span>
+          <span class="keyword">Highlights</span>
+          <span class="grey" ng-show="!showHideHighlights">[...]</span>
+        </a>
+      </h3>
+      <ul ng-show="showHideHighlights">
+        <li class="task" ng-repeat="task in project.tasks"><div ng-bind-html="task"></div></li>
+      </ul>
+    </div>
+    <!-- <div class="environments"><h3>Environments:</h3>{{project.environments}}</div> -->
+  </div>
+</div>

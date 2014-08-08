@@ -1,0 +1,16 @@
+{
+  "name": "app",
+  "version": "0.0.0",
+  "ignore": [
+    "node_modules",
+    "app/components"
+  ],
+  "devDependencies": {
+    "jquery": "latest",
+    "angular": "latest",
+    "angular-sanitize": "latest",
+    "angular-route": "latest",
+    "requirejs": "latest",
+    "requirejs-domready": "latest"
+  }
+}

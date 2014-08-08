@@ -1,0 +1,71 @@
+
+@grey: rgb(200, 200, 200);
+@green: #8AC007;
+
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+/*
+  Allow angular.js to be loaded in body, hiding cloaked elements until
+  templates compile.  The !important is important given that there may be
+  other selectors that are more specific or come later and might alter display.
+ */
+  display: none !important;
+}
+
+body {
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+header {
+  max-width: 1000px;
+  max-height: 125px;
+  margin: 0px auto;
+
+  .logo {
+    float: left;
+    padding: 25px 0px;
+    width: 195px;
+
+    img {
+      height: 100px;
+      width: 195px;
+    }
+  }
+
+  .menu{
+    padding: 35px 0px;
+    font-size: 23px;
+
+    ul {
+      text-align: center;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        padding: 20px 30px;
+        line-height: 20px;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.content {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  h1 {
+    text-align: center;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+}
+
+@media (min-width: 435px) and (max-width: 680px) {
+
+}

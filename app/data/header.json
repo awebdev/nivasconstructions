@@ -1,0 +1,24 @@
+{
+  "links": {
+    "10": {
+      "title": "Home",
+      "url": ""
+    },
+    "20": {
+      "title": "Profile",
+      "url": "profile"
+    },
+    "30": {
+      "title": "Projects",
+      "url": "projects"
+    },
+    "40": {
+      "title": "FAQ",
+      "url": "faq"
+    },
+    "50": {
+      "title": "Contact Us",
+      "url": "contact"
+    }
+  }
+}
