@@ -1,7 +1,7 @@
 
 @grey: rgb(200, 200, 200);
 @green: #8AC007;
-
+@orange: #f2880a;
 
 [ng\:cloak], [ng-cloak], .ng-cloak {
 /*
@@ -40,15 +40,18 @@ header {
     ul {
       text-align: center;
 
-      a {
-        text-decoration: none;
-        color: inherit;
+      li {
         padding: 20px 30px;
         line-height: 20px;
         display: inline-block;
-      }
-      a:hover {
-        color: #f2880a;
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+
+        a:hover, .active{
+          color: @orange;
+        }
       }
     }
   }

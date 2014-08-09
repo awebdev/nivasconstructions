@@ -12,7 +12,9 @@
       </div>
       <div class="menu">
         <ul>
-          <a class="items" ng-repeat="link in links" href="#/{{link.url}}">{{link.title}}</a>
+          <li class="items" ng-repeat="link in links">
+            <a ng-class="{ active: isActive(link.url)}" href="#{{link.url}}">{{link.title}}</a>
+          </li>
         </ul>
       </div>
     </header>

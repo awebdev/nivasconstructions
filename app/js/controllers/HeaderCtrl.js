@@ -9,6 +9,10 @@ define(['angular'], function(angular) {
       .error(function(data, status, headers, config) {
         console.log(status);
       });
+
+    $scope.isActive = function (viewLocation) {
+      return viewLocation === $location.path();
+    };
   };
 
   return HeaderCtrl;

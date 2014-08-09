@@ -2,27 +2,27 @@
   "links": {
     "10": {
       "title": "Home",
-      "url": "",
+      "url": "/",
       "controller": "HeaderCtrl"
     },
     "20": {
       "title": "Profile",
-      "url": "profile",
+      "url": "/profile",
       "controller": "ProfileCtrl"
     },
     "30": {
       "title": "Projects",
-      "url": "projects",
+      "url": "/projects",
       "controller": "ProjectCtrl"
     },
     "40": {
       "title": "FAQ",
-      "url": "faq",
+      "url": "/faq",
       "controller": "FAQCtrl"
     },
     "50": {
       "title": "Contact Us",
-      "url": "contact"
+      "url": "/contact"
     }
   }
 }
