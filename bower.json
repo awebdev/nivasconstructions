@@ -10,7 +10,8 @@
     "angular": "latest",
     "angular-sanitize": "latest",
     "angular-route": "latest",
-    "requirejs": "latest",
-    "requirejs-domready": "latest"
+    "angular-touch": "latest",
+    "angular-carousel": "latest",
+    "requirejs": "latest"
   }
 }

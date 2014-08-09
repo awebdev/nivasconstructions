@@ -1,3 +1,5 @@
+@import (less) "../components/angular-carousel/dist/angular-carousel.css";
+
 
 @grey: rgb(200, 200, 200);
 @green: #8AC007;
@@ -20,7 +22,7 @@ body {
 header {
   max-width: 1000px;
   max-height: 125px;
-  margin: 0px auto;
+  margin: 0px auto 0px auto;
 
   .logo {
     float: left;
@@ -60,7 +62,7 @@ header {
 .content {
   padding: 20px;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 0px auto 0px auto;
 
   h1 {
     text-align: center;
@@ -70,6 +72,23 @@ header {
     text-align: justify;
   }
 
+  .home {
+    width: 610px;
+    margin: 0px auto 0px auto;
+
+    img {
+      max-width: 600px;
+      max-height: 500px;
+    }
+
+    /* Overriding angular-carousel.css */
+    .rn-carousel-indicator {
+      background-color: transparent;
+      .active {
+        color: #008FFF;
+      }
+    }
+  }
 }
 
 @media (min-width: 435px) and (max-width: 680px) {

@@ -78,6 +78,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', 'build application', [
                      'requirejs:compile',
-                     'copy:build'
+                     'copy:build',
+                     'default'
                    ]);
 };

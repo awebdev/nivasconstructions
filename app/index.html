@@ -19,14 +19,14 @@
       </div>
     </header>
 
-    <div id="content" class="content">
+    <div id="content" class="content" ng-cloak>
       <div ng-view></div>
     </div>
 
     <footer></footer>
 
     <!-- Embedd requireJs -->
-    <!-- <script data-main="dist/app" src="components/requirejs/require.js"></script> -->
-    <script data-main="js/index" src="components/requirejs/require.js"></script>
+    <script data-main="dist/app" src="components/requirejs/require.js"></script>
+    <!-- <script data-main="js/index" src="components/requirejs/require.js"></script> -->
   </body>
 </html>

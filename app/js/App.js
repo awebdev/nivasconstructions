@@ -1,12 +1,12 @@
 define(['angular', 'controllers/HeaderCtrl', 'controllers/HomeCtrl', 'controllers/RouteHandler',
           'controllers/ProfileCtrl',
-          'services/Utils', 'angular-sanitize', 'angular-route'],
+          'services/Utils', 'angular-route', 'angular-touch', 'angular-carousel'],
  function(angular, HeaderCtrl, HomeCtrl, RouteHandler,
           ProfileCtrl,
             Utils) {
   'use strict';
 
-  var App = angular.module('myApp', ['ngSanitize', 'ngRoute'])
+  var App = angular.module('myApp', ['ngRoute', 'ngTouch', 'angular-carousel'])
                   .controller('HeaderCtrl', HeaderCtrl)
                   .controller('HomeCtrl', HomeCtrl)
                   .controller('ProfileCtrl', ProfileCtrl)

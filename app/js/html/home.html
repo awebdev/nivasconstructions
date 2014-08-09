@@ -1,3 +1,7 @@
-<div>
-  {{this.content}}
+<div class="home">
+  <ul rn-carousel rn-carousel-indicator rn-carousel-auto-slide='2' class="image">
+    <li ng-repeat="image in homeCtrl.images">
+      <img src="{{image}}" align="center">
+    </li>
+  </ul>
 </div>

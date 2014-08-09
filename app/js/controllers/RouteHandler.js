@@ -8,12 +8,12 @@ define(['angular', 'services/Utils'],
       .when('/', {
         templateUrl: templateDir + 'home.html',
         controller: 'HomeCtrl',
-        controllerAs: 'this'
+        controllerAs: 'homeCtrl'
       })
       .when('/profile', {
         templateUrl: templateDir + 'profile.html',
         controller: 'ProfileCtrl',
-        controllerAs: 'this'
+        controllerAs: 'profileCtrl'
       })
       .otherwise({
         redirectTo: '/'

@@ -3,9 +3,10 @@ requirejs.config({
   paths: {
     'jquery': '../components/jquery/dist/jquery',
     'angular': '../components/angular/angular',
-    'angular-route': '../components/angular-route/angular-route.min',
+    'angular-route': '../components/angular-route/angular-route',
     'angular-sanitize': '../components/angular-sanitize/angular-sanitize',
-    'domReady': '../components/requirejs-domready/domReady'
+    'angular-touch': '../components/angular-touch/angular-touch',
+    'angular-carousel': '../components/angular-carousel/dist/angular-carousel'
   },
   shim: {
     "angular": {
@@ -13,12 +14,16 @@ requirejs.config({
       exports: "angular"
     },
     'angular-route': {
-      deps: ['angular'],
-      exports: "ngRoute"
+      deps: ['angular']
     },
     'angular-sanitize': {
-      deps: ['angular'],
-      exports: "ngSanitize"
+      deps: ['angular']
+    },
+    'angular-touch': {
+      deps: ['angular']
+    },
+    'angular-carousel': {
+      deps: ['angular', 'angular-touch']
     }
   }
 });
