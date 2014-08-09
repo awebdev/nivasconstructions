@@ -39,6 +39,28 @@ module.exports = function(grunt) {
           "<%= config.app %>/css/main.css": "<%= config.app %>/less/main.less"
         }
       }
+    },
+
+    copy: {
+      build: {
+        files: [
+          // Specific Files
+          {src: ['<%= config.app %>/index.html'], dest: '<%= config.build %>', expand: true, filter: 'isFile'},
+          {src: ['<%= config.app %>/components/requirejs/require.js'], dest: '<%= config.build %>', expand: true, filter: 'isFile'},
+
+          // All folders and sub-folders
+          {src: ['<%= config.app %>/images/**'], dest: '<%= config.build %>', expand: true},
+          {src: ['<%= config.app %>/data/**'], dest: '<%= config.build %>', expand: true},
+          {src: ['<%= config.app %>/dist/**'], dest: '<%= config.build %>', expand: true},
+          {src: ['<%= config.app %>/js/html/**'], dest: '<%= config.build %>', expand: true}
+
+          // makes all src relative to cwd
+          // {expand: true, cwd: 'path/', src: ['**'], dest: 'dest/'},
+
+          // flattens results to a single level
+          // {expand: true, flatten: true, src: ['path/**'], dest: 'dest/', filter: 'isFile'}
+        ]
+      }
     }
   });
 
@@ -55,6 +77,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', 'build application', [
-                     'requirejs:compile'
+                     'requirejs:compile',
+                     'copy:build'
                    ]);
 };
