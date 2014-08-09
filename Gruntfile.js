@@ -23,7 +23,7 @@ module.exports = function(grunt) {
           name: 'index',
           mainConfigFile: '<%= config.app %>/js/index.js',
           baseUrl: '<%= config.app %>/js',
-          out: '<%= config.app %>/js/require/app.js',
+          out: '<%= config.app %>/dist/app.js',
           optimize: 'none',
           preserveLicenseComments: true
         }

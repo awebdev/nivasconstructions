@@ -1,12 +1,11 @@
-var componentsUrl = '../components/';
 requirejs.config({
   baseUrl: 'js',
   paths: {
-    'jquery': componentsUrl + 'jquery/dist/jquery',
-    'angular': componentsUrl + 'angular/angular',
-    'angular-route': componentsUrl + 'angular-route/angular-route.min',
-    'angular-sanitize': componentsUrl + 'angular-sanitize/angular-sanitize',
-    'domReady': componentsUrl + 'requirejs-domready/domReady'
+    'jquery': '../components/jquery/dist/jquery',
+    'angular': '../components/angular/angular',
+    'angular-route': '../components/angular-route/angular-route.min',
+    'angular-sanitize': '../components/angular-sanitize/angular-sanitize',
+    'domReady': '../components/requirejs-domready/domReady'
   },
   shim: {
     "angular": {
