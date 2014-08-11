@@ -1,15 +1,16 @@
 define(['angular'], function(angular) {
   'use strict';
 
-  var HomeCtrl = function($scope, $http) {
-    $http.get('data/home.json')
+  var ProjectsCtrl = function($scope, $http) {
+    $http.get('data/projects.json')
       .success(function(data, status, headers, config) {
-        $scope.images = data.images;
+        $scope.active = data.active;
+        $scope.archive = data.archive;
       })
       .error(function(data, status, headers, config) {
         console.log(status);
       });
   };
 
-  return HomeCtrl;
+  return ProjectsCtrl;
 });

@@ -6,7 +6,9 @@ requirejs.config({
     'angular-route': '../components/angular-route/angular-route',
     'angular-sanitize': '../components/angular-sanitize/angular-sanitize',
     'angular-touch': '../components/angular-touch/angular-touch',
-    'angular-carousel': '../components/angular-carousel/dist/angular-carousel'
+    'angular-carousel': '../components/angular-carousel/dist/angular-carousel',
+    'lodash': '../components/lodash/dist/lodash.min',
+    'angular-google-maps': '../components/angular-google-maps/dist/angular-google-maps'
   },
   shim: {
     "angular": {
@@ -24,6 +26,9 @@ requirejs.config({
     },
     'angular-carousel': {
       deps: ['angular', 'angular-touch']
+    },
+    'angular-google-maps': {
+      deps: ['angular', 'lodash']
     }
   }
 });

@@ -6,19 +6,14 @@
       "controller": "HeaderCtrl"
     },
     "20": {
-      "title": "Profile",
-      "url": "/profile",
-      "controller": "ProfileCtrl"
-    },
-    "30": {
       "title": "Projects",
       "url": "/projects",
       "controller": "ProjectCtrl"
     },
-    "40": {
-      "title": "FAQ",
-      "url": "/faq",
-      "controller": "FAQCtrl"
+    "30": {
+      "title": "About",
+      "url": "/about",
+      "controller": "AboutCtrl"
     },
     "50": {
       "title": "Contact Us",

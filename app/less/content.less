@@ -1,0 +1,103 @@
+.content {
+  padding: 20px;
+  width: 1000px;
+  max-width: 100%;
+  margin: 0px auto 0px auto;
+
+  .home {
+    width: 610px;
+    max-width: 100%;
+    margin: 0px auto 0px auto;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 25px;
+      color: @dodgerBlue;
+      position: fixed;
+      bottom: 0px;
+      background-color: rgba(255, 255, 255, 0.7);
+      width: 100%;
+      line-height: 50px;
+    }
+
+    /* Overriding angular-carousel.css */
+    .rn-carousel-container {
+      box-shadow: 0 0 25px 10px #7c8282;
+    }
+    .rn-carousel-indicator {
+      background-color: transparent;
+      .active {
+        color: #008FFF;
+      }
+    }
+  }
+
+  .projects {
+    h3 {
+      text-align: center;
+    }
+    .project {
+      float: left;
+      height: 325px;
+      padding: 0px 70px 0px 70px;
+
+      img {
+        max-width: 300px;
+        max-height: 300px;
+      }
+
+      .title {
+        text-align: center;
+      }
+    }
+  }
+
+  .about {
+    p {
+      text-align: justify;
+    }
+  }
+
+  .contact {
+    .info {
+      .individuals {
+        float: left;
+        width: 50%;
+        padding-bottom: 20px;
+
+        .individual {
+          .name {
+            font-weight: bold;
+          }
+        }
+      }
+
+      .company {
+        float: right;
+        width: 50%;
+        padding-bottom: 20px;
+      }
+    }
+
+    .angular-google-map-container {
+      box-shadow: 0px 0px 25px 10px #7c8282;
+      height: 400px;
+
+      .marker-labels {
+        color: red;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .content {
+    padding-top: 125px;
+  }
+}

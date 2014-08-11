@@ -1,0 +1,23 @@
+{
+  "active": {
+    "10": {
+      "title": "Sarada Sadan",
+      "thumbnail": "images/carousel/saradaSadan.png"
+    },
+    "20": {
+      "title": "Padmanayaka Residency",
+      "thumbnail": "images/carousel/padmanayaka.png"
+    },
+    "30": {
+      "title": "Vijay Krishna Residency",
+      "thumbnail": "images/carousel/vijayKrishna.png"
+    },
+    "40": {
+      "title": "Kalyani Residency",
+      "thumbnail": "images/carousel/kalyaniResidency.png"
+    }
+  },
+  "archive": {
+
+  }
+}

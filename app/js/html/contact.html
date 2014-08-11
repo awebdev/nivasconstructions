@@ -1,0 +1,27 @@
+<div class="contact">
+  <div class="info">
+    <section class="individuals" ng-repeat="individual in individuals">
+      <div class="individual">
+        <div class="name">{{individual.name}}</div>
+        <div class="title">{{individual.title}}</div>
+        <div class="phone">Phone: {{individual.phone}}</div>
+      </div>
+    </section>
+    <section class="company">
+      <b>Address</b><br/>
+        {{company.name}}<br/>
+        <span ng-repeat="address in company.address">{{address}}<br/></span>
+        <br/>
+        Phone: {{company.phone}}<br/>
+        E-mail : <span ng-repeat="email in company.emails"><a href="mailto:{{email}}">{{email}}</a><br/></span><br/>
+    </section>
+  </div>
+  <div class="clear"></div>
+  <div class="map">
+    <google-map center="map.center" zoom="map.zoom" draggable="true">
+      <marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id" >
+        <marker-label content="marker.title" anchor="2 0" class="marker-labels"/>
+      </marker>
+    </google-map>
+  </div>
+</div>

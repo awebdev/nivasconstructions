@@ -3,9 +3,13 @@
   <head>
     <title>Nivas Constructions</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="dist/main.min.css" />
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL-O0qdtGAuEB6kYsBw87jcTsKilIFBW0"></script>
   </head>
-  <body>
+  <body ng-init="isMenuOpen = false">
     <header ng-controller="HeaderCtrl as headerCtrl" ng-cloak>
       <div class="logo">
         <img src="images/logo.png" alt="Nivas Constructions"/>
@@ -17,9 +21,19 @@
           </li>
         </ul>
       </div>
+      <div id="hamburger" ng-show="isMenuOpen" ng-click="isMenuOpen = false">
+        <div ng-repeat="link in links">
+          <a ng-class="{ active: isActive(link.url)}"  href="#{{link.url}}">{{link.title}}</a>
+        </div>
+      </div>
+      <nav ng-hide="isMenuOpen" ng-click="isMenuOpen = !isMenuOpen">
+        <div class="hamburgerIcon"> ||| </div>
+      </nav>
     </header>
 
-    <div id="content" class="content" ng-cloak>
+
+    <!-- Content -->
+    <div id="content" class="content" ng-click="isMenuOpen = false" ng-cloak>
       <div ng-view></div>
     </div>
 

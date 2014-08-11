@@ -1,7 +1,8 @@
 <div class="home">
-  <ul rn-carousel rn-carousel-indicator rn-carousel-auto-slide='2' class="image">
-    <li ng-repeat="image in homeCtrl.images">
-      <img src="{{image}}" align="center">
+  <ul rn-carousel rn-carousel-indicator rn-carousel-buffered='true' class="image">
+    <li ng-repeat="image in images">
+      <img src="{{image.url}}" align="center">
+      <div class="title">{{image.title}}</div>
     </li>
   </ul>
 </div>
