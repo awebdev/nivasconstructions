@@ -46,6 +46,7 @@ module.exports = function(grunt) {
         files: [
           // Specific Files
           {src: ['<%= config.app %>/index.html'], dest: '<%= config.build %>', expand: true, filter: 'isFile'},
+          {src: ['<%= config.app %>/sitemap.xml'], dest: '<%= config.build %>', expand: true, filter: 'isFile'},
           {src: ['<%= config.app %>/components/requirejs/require.js'], dest: '<%= config.build %>', expand: true, filter: 'isFile'},
 
           // All folders and sub-folders

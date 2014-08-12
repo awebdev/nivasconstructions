@@ -4,6 +4,7 @@
     <title>Nivas Constructions</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="fragment" content="!" />
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="dist/main.min.css" />
@@ -17,7 +18,7 @@
       <div class="menu">
         <ul>
           <li class="items" ng-repeat="link in links">
-            <a ng-class="{ active: isActive(link.url)}" href="#{{link.url}}">{{link.title}}</a>
+            <a ng-class="{active: isActive(link.url)}" href="#{{link.url}}">{{link.title}}</a>
           </li>
         </ul>
       </div>
