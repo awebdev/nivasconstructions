@@ -1,20 +1,24 @@
 {
-  "images": {
+  "slides": {
     "10": {
       "title": "Sarada Sadan",
-      "url": "images/carousel/saradaSadan.png"
+      "image": "images/carousel/saradaSadan.png",
+      "description": "<span class='required'>Project Details</span>"
     },
     "20": {
       "title": "Padmanayaka Residency",
-      "url": "images/carousel/padmanayaka.png"
+      "image": "images/carousel/padmanayaka.png",
+      "description": "<span class='required'>Project Details</span>"
     },
     "30": {
       "title": "Vijay Krishna Residency",
-      "url": "images/carousel/vijayKrishna.png"
+      "image": "images/carousel/vijayKrishna.png",
+      "description": "<span class='required'>Project Details</span>"
     },
     "40": {
       "title": "Kalyani Residency",
-      "url": "images/carousel/kalyaniResidency.png"
+      "image": "images/carousel/kalyaniResidency.png",
+      "description": "<span class='required'>Project Details</span>"
     }
   }
 }

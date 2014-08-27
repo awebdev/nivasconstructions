@@ -4,6 +4,10 @@ define(['angular', 'services/Utils'],
 
   var RouteHandler = function RouteHandler($routeProvider, $locationProvider) {
     var templateDir = 'js/html/';
+
+    // configure html5 to get links working on jsfiddle
+    // $locationProvider.html5Mode(true).hashPrefix('!');
+
     $routeProvider
       .when('/', {
         templateUrl: templateDir + 'home.html',
@@ -28,9 +32,6 @@ define(['angular', 'services/Utils'],
       .otherwise({
         redirectTo: '/'
       });
-
-    // configure html5 to get links working on jsfiddle
-    $locationProvider.html5Mode(true).hashPrefix('!');
   };
 
   return RouteHandler;

@@ -3,7 +3,7 @@
 @darkOrange: #f4821f;
 @dodgerBlue: #0096d6;
 
-@import (less) "../components/angular-carousel/dist/angular-carousel.css";
+@import (less) "../components/bootstrap/dist/css/bootstrap.css";
 @import "header.less";
 @import "content.less";
 
@@ -18,10 +18,40 @@
 
 body {
   margin: 0px;
-  font-family: sans-serif;
+  font-family: Verdana, Geneva, sans-serif;
   overflow-x: hidden;
+
+  .overlay {
+    display: none;
+    background-color: rgba(0,0,0,.4);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* left: 0px; */
+    /* top: 0px; */
+    /* bottom: 0px; */
+    max-width: 500px;
+    max-height: 500px;
+    margin: 0px auto;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  a:hover {
+    cursor: pointer;
+    text-decoration: none;
+  }
 }
+
 
 .clear {
   clear: both;
+}
+
+.required {
+  color:red;
+  font-weight: bold;
+  font-size: 15px;
 }

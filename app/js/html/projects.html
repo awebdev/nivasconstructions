@@ -1,14 +1,32 @@
 <div class="projects">
+  <div class="gallery" ng-show="gallery">
+    <div ng-click="gallery = false" class="closeGallery">
+      Close X
+    </div>
+    <carousel><!-- interval="7500"-->
+      <slide ng-repeat="image in gallery">
+        <img ng-src="{{image}}">
+      </slide>
+    </carousel>
+  </div>
   <div class="active">
-    <h3> Ongoing Projects </h3>
-    <div class="project" ng-repeat="project in active">
-      <img src="{{project.thumbnail}}"/>
-      <div class="title">{{project.title}}</div>
+    <h2 class="title"> Ongoing Projects </h2>
+    <div class="project" ng-repeat="(id, project) in activeProjects" data-id="{{id}}">
+      <div class="name">{{project.title}}</div>
+      <div>
+        <img ng-src="{{project.thumbnail}}"/>
+        <span class="description" ng-bind-html="project.description"></span>
+      </div>
+      <div>
+        <span ng-show="project.gallery"><a ng-click="setGallery({{project.gallery}})">Gallery</a></span>
+        <span ng-show="project.brochure">| &nbsp<a href="{{project.brochure}}" target="_blank">More details</a></span>
+      </div>
+      <div class="clear"></div>
     </div>
   </div>
   <div class="archive">
     <div class="project" ng-repeat="project in archive">
-      <img src="{{project.thumbnail}}"/>
+      <img ng-src="{{project.thumbnail}}"/>
       <div class="title">{{project.title}}</div>
     </div>
   </div>

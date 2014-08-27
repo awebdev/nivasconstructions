@@ -2,7 +2,7 @@
   padding: 20px;
   width: 1000px;
   max-width: 100%;
-  margin: 0px auto 0px auto;
+  margin: 10px auto 0px auto;
 
   .home {
     width: 610px;
@@ -25,35 +25,103 @@
       line-height: 50px;
     }
 
-    /* Overriding angular-carousel.css */
-    .rn-carousel-container {
+    .carousel{
       box-shadow: 0 0 25px 10px #7c8282;
-    }
-    .rn-carousel-indicator {
-      background-color: transparent;
-      .active {
-        color: #008FFF;
+
+      img {
+        float: left;
+        max-width: 75%;
+        height: 500px;
+      }
+
+      .carouselDetails {
+        float: right;
+        max-width: 25%;
+      }
+
+      .carousel-control.left, .carousel-control.right{
+        background: none !important;
+        filter: progid:none !important;
+      }
+
+      .carousel-indicators {
+        left: 0px;
+        position: absolute;
+        bottom: 0px;
+        z-index: 15;
+        width: 100%;
+        padding-left: 0px;
+        margin: 0px auto 0px auto;
+        text-align: center;
+        list-style: none;
       }
     }
   }
 
   .projects {
-    h3 {
+    .title {
       text-align: center;
+      margin-bottom: 25px;
     }
+
+    .gallery {
+      position: fixed;
+      margin: 0 auto;
+      border: 1px rgba(0, 0, 0, .4);
+      border-radius: 10px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, .4);
+
+      img {
+        max-width: 450px;
+        max-height: 450px;
+        width: 100%;
+        height: 100%;
+      }
+
+      .closeGallery {
+        color: #fff;
+        cursor: pointer;
+        /* float: left; */
+        font-weight: bold;
+        font-size: 13px;
+        position: absolute;
+        right: 2px;
+        top: 2px;
+      }
+    }
+
     .project {
-      float: left;
-      height: 325px;
       padding: 0px 70px 0px 70px;
 
       img {
+        float: left;
         max-width: 300px;
         max-height: 300px;
+        margin: 5px 10px 0px 0px;
       }
 
-      .title {
-        text-align: center;
+      .name {
+        font-size: 20px;
+        font-weight: bold;
       }
+
+      a {
+        color: @dodgerBlue;
+        font-weight: bold;
+
+        a:hover {
+          color: @darkOrange;
+        }
+      }
+    }
+    .project:after{
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      margin: 10px;
+      background: @grey;
     }
   }
 
@@ -64,34 +132,40 @@
   }
 
   .contact {
-    .info {
-      .individuals {
-        float: left;
-        width: 50%;
-        padding-bottom: 20px;
+    .name {
+      font-weight: bold;
+    }
 
-        .individual {
-          .name {
-            font-weight: bold;
-          }
-        }
-      }
+    .individuals {
+      padding-bottom: 40px;
 
-      .company {
-        float: right;
-        width: 50%;
-        padding-bottom: 20px;
+      .individual{
+        padding: 5px;
       }
     }
 
-    .angular-google-map-container {
-      box-shadow: 0px 0px 25px 10px #7c8282;
-      height: 400px;
-
-      .marker-labels {
-        color: red;
-        font-weight: bold;
+    .info {
+      .company {
+        float: left;
+        width: 50%;
+        padding-bottom: 20px;
       }
+
+      .angular-google-map-container {
+        box-shadow: 0px 0px 25px 10px #7c8282;
+        float: right;
+        height: 350px;
+        width: 50%;
+
+        .marker-labels {
+          color: red;
+          font-weight: bold;
+        }
+      }
+    }
+
+    a {
+      color: #428bca;
     }
   }
 }

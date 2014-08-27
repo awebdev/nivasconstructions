@@ -1,12 +1,13 @@
 define(['angular', 'controllers/HeaderCtrl', 'controllers/HomeCtrl', 'controllers/RouteHandler',
           'controllers/ProjectsCtrl', 'controllers/AboutCtrl', 'controllers/ContactCtrl',
-          'services/Utils', 'angular-route', 'angular-touch', 'angular-carousel', 'angular-google-maps'],
+          'services/Utils',
+          'angular-sanitize', 'angular-route', 'angular-touch', 'angular-bootstrap', 'angular-google-maps'],
  function(angular, HeaderCtrl, HomeCtrl, RouteHandler,
           ProjectsCtrl, AboutCtrl, ContactCtrl,
-            Utils) {
+          Utils) {
   'use strict';
 
-  var App = angular.module('myApp', ['ngRoute', 'ngTouch', 'angular-carousel', 'google-maps'])
+  var App = angular.module('myApp', ['ngRoute', 'ngTouch', 'ui.bootstrap', 'google-maps', 'ngSanitize'])
                   .controller('HeaderCtrl', HeaderCtrl)
                   .controller('HomeCtrl', HomeCtrl)
                   .controller('ProjectsCtrl', ProjectsCtrl)

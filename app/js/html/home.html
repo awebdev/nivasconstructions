@@ -1,8 +1,13 @@
 <div class="home">
-  <ul rn-carousel rn-carousel-indicator rn-carousel-buffered='true' class="image">
-    <li ng-repeat="image in images">
-      <img src="{{image.url}}" align="center">
-      <div class="title">{{image.title}}</div>
-    </li>
-  </ul>
+  <div class="carousel">
+    <carousel interval="7500" >
+      <slide ng-repeat="slide in slides">
+        <img ng-src="{{slide.image}}">
+        <div class="carouselDetails">
+          <p ng-bind-html="slide.title"></p>
+          <p ng-bind-html="slide.description"></p>
+        </div>
+      </slide>
+    </carousel>
+  </div>
 </div>

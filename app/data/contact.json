@@ -1,19 +1,25 @@
 {
   "individuals": {
     "10": {
-      "name": "P. Ram Mohan Rao",
+      "name": "Ram Mohan Rao",
       "title": "Chairman & Manging Director",
-      "phone": "+91-9246559119, 9246538465"
+      "phone": "+91-9246559119"
+    },
+    "20": {
+      "name": "Venkateshwar Rao",
+      "title": "",
+      "phone": "+91-9246538465"
     }
   },
   "company": {
     "name": "M/s. NIVAS CONSTRUCTIONS",
     "address": [
-      "Flat No. 101, ’Gurunivas’ #18-83, Lane",
-      "Adj. Vinayaka Automobiles, Kamalanagar",
-      "Dilsukhnagar, Hyderabad"
+      "Flat No. 101, ’Gurunivas’ #18-83",
+      "lane Adj. Sri Chaitanya college,",
+      "Kamalanagar, Dilsukhnagar,",
+      "Hyderabad 500036"
     ],
-    "phone": "040-24043953, 9246558465",
+    "phone": "+91-040-24043953, +91-9246558465",
     "emails": [
       "nivasconstructions@hotmail.com"
     ]
