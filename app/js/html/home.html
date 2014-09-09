@@ -1,12 +1,9 @@
 <div class="home">
   <div class="carousel">
-    <carousel interval="7500" >
-      <slide ng-repeat="slide in slides">
-        <img ng-src="{{slide.image}}">
-        <div class="carouselDetails">
-          <p ng-bind-html="slide.title"></p>
-          <p ng-bind-html="slide.description"></p>
-        </div>
+     <carousel> <!-- interval="7500" -->
+      <slide ng-repeat="carousel in carousels | filter:{ status: 'active'}">
+        <img ng-src="{{carousel.thumbnail}}">
+        <span class="title" ng-bind-html="carousel.title"></span>
       </slide>
     </carousel>
   </div>

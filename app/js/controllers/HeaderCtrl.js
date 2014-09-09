@@ -2,9 +2,9 @@ define(['angular'], function(angular) {
   'use strict';
 
   var HeaderCtrl = function($scope, $http, $location) {
-    $http.get('data/header.json')
+    $http.get('api/menu')
       .success(function(data, status, headers, config) {
-        $scope.links = data.links;
+        $scope.links = data;
       })
       .error(function(data, status, headers, config) {
         console.log(status);

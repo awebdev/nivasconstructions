@@ -9,25 +9,21 @@
       </slide>
     </carousel>
   </div>
-  <div class="active">
-    <h2 class="title"> Ongoing Projects </h2>
-    <div class="project" ng-repeat="(id, project) in activeProjects" data-id="{{id}}">
-      <div class="name">{{project.title}}</div>
-      <div>
-        <img ng-src="{{project.thumbnail}}"/>
-        <span class="description" ng-bind-html="project.description"></span>
-      </div>
-      <div>
-        <span ng-show="project.gallery"><a ng-click="setGallery({{project.gallery}})">Gallery</a></span>
-        <span ng-show="project.brochure">| &nbsp<a href="{{project.brochure}}" target="_blank">More details</a></span>
-      </div>
-      <div class="clear"></div>
-    </div>
-  </div>
-  <div class="archive">
-    <div class="project" ng-repeat="project in archive">
+  <div class="project" ng-repeat="(id, project) in projects | orderBy:'priority'" data-id="{{id}}">
+    <div class="name">{{project.title}}</div>
+    <div>
       <img ng-src="{{project.thumbnail}}"/>
-      <div class="title">{{project.title}}</div>
     </div>
+    <div>
+      <div ng-show="project.info.flats">
+        Flats: <b>{{project.info.flats}}</b><span ng-show="project.info.flatType">, <b>{{project.info.flatType}}</b></span>
+      </div>
+      <div ng-show="project.info.area">Area: <b>{{project.info.area}}</b></div>
+      <div ng-show="project.status">Status: <b>{{project.status}}</b></div>
+      <div ng-show="project.info.location">Location: <b>{{project.info.location}}</b></div>
+      <span ng-show="project.gallery"><a ng-click="setGallery({{project.gallery}})">Gallery</a></span>
+      <span ng-show="project.brochure">| &nbsp<a href="{{project.brochure}}" target="_blank">More details</a></span>
+    </div>
+    <div class="clear"></div>
   </div>
 </div>

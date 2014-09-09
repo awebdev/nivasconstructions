@@ -2,11 +2,10 @@ define(['angular'], function(angular) {
   'use strict';
 
   var ProjectsCtrl = function($scope, $http) {
-    $http.get('data/projects.json')
+    $http.get('/api/projects')
       .success(function(data, status, headers, config) {
+        $scope.projects = data;
         $scope.gallery = [];
-        $scope.activeProjects = data.activeProjects;
-        $scope.archive = data.archive;
 
         $scope.setGallery = function setGallery(gallery) {
           $scope.gallery = gallery;
