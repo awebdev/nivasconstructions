@@ -1,0 +1,20 @@
+<header ng-controller="HeaderCtrl as headerCtrl" ng-cloak>
+  <div class="logo">
+    <a href="#"><img src="images/logo.png" alt="Nivas Constructions"/></a>
+  </div>
+  <div class="menu">
+    <ul>
+      <li class="items" ng-repeat="link in links">
+        <a ng-class="{active: isActive(link.url)}" href="#{{link.url}}">{{link.title}}</a>
+      </li>
+    </ul>
+  </div>
+  <div id="hamburger" ng-show="isMenuOpen" ng-click="isMenuOpen = false">
+    <div ng-repeat="link in links">
+      <a ng-class="{ active: isActive(link.url)}"  href="#{{link.url}}">{{link.title}}</a>
+    </div>
+  </div>
+  <nav ng-hide="isMenuOpen" ng-click="isMenuOpen = !isMenuOpen">
+    <div class="hamburgerIcon"> ||| </div>
+  </nav>
+</header>

@@ -9,39 +9,33 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="dist/main.min.css" />
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL-O0qdtGAuEB6kYsBw87jcTsKilIFBW0"></script>
+    <script>
+      // Google Analytics
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-54656400-1', 'auto');
+      ga('require', 'displayfeatures');
+      ga('send', 'pageview', {
+        'page': '/',
+        'title': 'HomeCtrl'
+      });
+    </script>
   </head>
   <body ng-init="isMenuOpen = false">
-    <header ng-controller="HeaderCtrl as headerCtrl" ng-cloak>
-      <div class="logo">
-        <a href="#"><img src="images/logo.png" alt="Nivas Constructions"/></a>
-      </div>
-      <div class="menu">
-        <ul>
-          <li class="items" ng-repeat="link in links">
-            <a ng-class="{active: isActive(link.url)}" href="#{{link.url}}">{{link.title}}</a>
-          </li>
-        </ul>
-      </div>
-      <div id="hamburger" ng-show="isMenuOpen" ng-click="isMenuOpen = false">
-        <div ng-repeat="link in links">
-          <a ng-class="{ active: isActive(link.url)}"  href="#{{link.url}}">{{link.title}}</a>
-        </div>
-      </div>
-      <nav ng-hide="isMenuOpen" ng-click="isMenuOpen = !isMenuOpen">
-        <div class="hamburgerIcon"> ||| </div>
-      </nav>
-    </header>
-
-
+    <!--  Header -->
+    <div ng-include src="'js/html/header.html'"></div>
     <!-- Content -->
     <div id="content" class="content" ng-click="isMenuOpen = false" ng-cloak>
-      <div ng-view></div>
+      <div ng-view autoscroll=""></div>
     </div>
 
     <footer></footer>
 
     <!-- Embedd requireJs -->
-    <script data-main="dist/app" src="components/requirejs/require.js"></script>
-<!--     <script data-main="js/index" src="components/requirejs/require.js"></script> -->
+<!--     <script data-main="dist/app" src="components/requirejs/require.js"></script> -->
+    <script data-main="js/index" src="components/requirejs/require.js"></script>
   </body>
 </html>
