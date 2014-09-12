@@ -1,13 +1,13 @@
 header {
-  width: 1000px;
+  width: 850px;
   max-width: 100%;
   max-height: 125px;
-  margin: 0px auto;
-  background-color: rgba(255, 255, 255, 0.75);
+  margin: 10px auto;
 
   .logo {
-    float: left;
+    display: inline-block;
     padding: 5px 0px;
+    max-width: 137px;
   }
 
   .hamburger, .hamburgerIcon {
@@ -15,26 +15,57 @@ header {
   }
 
   .menu {
-    display: block;
+    display: inline-block;
     padding: 5px 0px;
     font-size: 23px;
+    vertical-align: -15px;
 
     ul {
-      margin-top: 15px;
-      text-align: center;
-
-      li {
+      li{
+        position: relative;
         padding: 20px 30px;
-        line-height: 20px;
         display: inline-block;
+      }
+      a{
+        display:block;
+        padding:5px;
+        color: @dodgerBlue;
+      }
+      a:hover{
+        color: @darkOrange;
+      }
 
-        a {
-          color: @dodgerBlue;
+      /*--- DROPDOWN ---*/
+      ul{
+        list-style:none;
+        position:absolute;
+        left:-9999px;
+        font-size: 18px;
+
+        li{
+          font-weight: 500;
+          padding: 1px;
+          float: none;
+          background: #fff;
+          
+          a {
+            white-space:nowrap;
+            width: 110px;
+          }
         }
 
-        a:hover, .active{
-          color: @darkOrange;
+        li:first-child {
+          border-radius: 10px 10px 0px 0px;
         }
+
+        li:last-child {
+          border-radius: 0px 0px 10px 10px;
+        }
+      }
+      
+      li:hover ul{ /* Display the dropdown on hover */
+        left: 0; /* Bring back on-screen when needed */
+        z-index: 1;
       }
     }
   }
@@ -42,14 +73,13 @@ header {
 
 @media (max-width: 680px) {
   header {
-    position: fixed;
     width: 100%;
     z-index: 1;
 
     .logo {
-      float: none;
+      display: block;
       padding: 10px 0px;
-      margin: 0px auto 0px auto;
+      margin: 0px auto;
     }
 
     .menu {

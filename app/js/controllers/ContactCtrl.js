@@ -2,7 +2,7 @@ define(['angular'], function(angular) {
   'use strict';
 
   var ContactCtrl = function($scope, $http) {
-    $http.get('data/contact.json')
+    $http.get('data/contact.json', { cache: true})
       .success(function(data, status, headers, config) {
         $scope.individuals = data.individuals;
         $scope.company = data.company;

@@ -19,7 +19,12 @@ define(['angular', 'services/Utils'],
         controller: 'AboutCtrl',
         controllerAs: 'aboutCtrl'
       })
-      .when('/projects', {
+      .when('/projects/ongoing', {
+        templateUrl: templateDir + 'projects.html',
+        controller: 'ProjectsCtrl',
+        controllerAs: 'projectsCtrl'
+      })
+      .when('/projects/completed', {
         templateUrl: templateDir + 'projects.html',
         controller: 'ProjectsCtrl',
         controllerAs: 'projectsCtrl'

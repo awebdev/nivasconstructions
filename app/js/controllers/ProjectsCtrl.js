@@ -1,9 +1,10 @@
 define(['angular'], function(angular) {
   'use strict';
 
-  var ProjectsCtrl = function($scope, $http) {
-    $http.get('/api/projects')
+  var ProjectsCtrl = function($scope, $http, $location) {
+    $http.get('/api/projects', { cache: true})
       .success(function(data, status, headers, config) {
+        $scope.projectTypes = ['Ongoing', 'Completed'];
         $scope.projects = data;
         $scope.gallery = [];
 
@@ -15,6 +16,12 @@ define(['angular'], function(angular) {
       .error(function(data, status, headers, config) {
         console.log(status);
       });
+    
+    $scope.type = function () {
+      var location = $location.path().split('/');
+      var type = location[location.length - 1];
+      return type;
+    };
   };
 
   return ProjectsCtrl;
