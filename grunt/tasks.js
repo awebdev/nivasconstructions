@@ -5,14 +5,14 @@ module.exports = function(grunt) {
       options: {
         host: '<%= config.host %>',
         port: '<%= config.appServerPort %>',
-        base: '<%= config.projectRoot %>'
+        base: '<%= config.app %>'
       }
     }
   });
 
   grunt.config('open', {
     app: {
-      path: 'http://<%= config.host %>:<%= config.appServerPort %>/<%= config.app %>/index.html'
+      path: 'http://<%= config.host %>:<%= config.appServerPort %>'
     }
   });
 
