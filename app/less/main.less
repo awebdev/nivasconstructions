@@ -35,7 +35,20 @@ body {
   margin: 0px;
   font-family: Verdana, Geneva, sans-serif;
   overflow-x: hidden;
-  background-color: #F3F7FA;
+/*   background-color: #F3F7FA; */
+
+  #background {
+    background-image: url('/app/images/bg.png');
+    -webkit-filter: blur(12px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+  }
 
   .overlay {
     display: none;
@@ -73,8 +86,6 @@ body {
     }
   }
 }
-
-
 
 @media (max-width: 680px) {
   .content {
