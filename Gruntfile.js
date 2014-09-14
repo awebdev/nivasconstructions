@@ -24,7 +24,7 @@ module.exports = function(grunt) {
           mainConfigFile: '<%= config.app %>/js/index.js',
           baseUrl: '<%= config.app %>/js',
           out: '<%= config.app %>/dist/app.js',
-          optimize: 'none',
+          optimize: 'uglify2',
           preserveLicenseComments: true
         }
       }

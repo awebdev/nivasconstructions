@@ -30,7 +30,7 @@
       </div>
       <span ng-show="project.gallery"><a ng-click="setGallery({{project.gallery}})">Gallery</a></span>
       <span ng-repeat="(title, link) in project.links">
-        | &nbsp<a href="{{link}}" target="_blank">{{title}}</a>
+        | &nbsp<a ng-href="{{link}}" target="_blank">{{title}}</a>
       </span>
     </div>
   </div>

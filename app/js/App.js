@@ -8,11 +8,11 @@ define(['angular', 'controllers/HeaderCtrl', 'controllers/HomeCtrl', 'controller
   'use strict';
 
   var App = angular.module('myApp', ['ngRoute', 'ngTouch', 'ui.bootstrap', 'google-maps', 'ngSanitize'])
-                  .controller('HeaderCtrl', HeaderCtrl)
-                  .controller('HomeCtrl', HomeCtrl)
-                  .controller('ProjectsCtrl', ProjectsCtrl)
-                  .controller('AboutCtrl', AboutCtrl)
-                  .controller('ContactCtrl', ContactCtrl)
+                  .controller('HeaderCtrl', ['$scope', '$http', '$location', '$rootScope', HeaderCtrl])
+                  .controller('HomeCtrl', ['$scope', '$http', HomeCtrl])
+                  .controller('ProjectsCtrl', ['$scope', '$http', '$location', ProjectsCtrl])
+                  .controller('AboutCtrl', ['$scope', '$http', AboutCtrl])
+                  .controller('ContactCtrl', ['$scope', '$http', ContactCtrl])
                   .service('Utils', Utils)
                   .config(['$routeProvider', '$locationProvider', RouteHandler]);
 
