@@ -25,15 +25,11 @@
     </script>
   </head>
   <body ng-init="isMenuOpen = false">
-    <div id="background"></div>
-    <!--  Header -->
     <div ng-include src="'js/html/header.html'"></div>
-    <!-- Content -->
     <div id="content" class="content" ng-click="isMenuOpen = false" ng-cloak>
-      <div ng-view autoscroll=""></div>
+      <div ng-view autoscroll="" style="height:100%"></div>
     </div>
-
-    <footer></footer>
+    <footer>&copy; 2014 Nivas Constructions | <a href="#/contact">Contact Us</a> </footer>
 
     <!-- Embedd requireJs -->
     <script data-main="dist/app" src="components/requirejs/require.js"></script>

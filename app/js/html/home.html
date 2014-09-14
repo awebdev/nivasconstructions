@@ -1,5 +1,8 @@
 <div class="home">
   <div class="carousel">
+    <div class="ribbon-wrapper-green">
+      <div class="ribbon-green">Ongoing Project</div>
+    </div>
     <carousel interval="5000">
       <slide ng-repeat="carousel in carousels | filter:{ status: 'Ongoing'}">
         <span class="title" ng-bind-html="carousel.name"></span>

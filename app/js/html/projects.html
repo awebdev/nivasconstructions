@@ -21,8 +21,17 @@
       <div ng-show="project.info.area">Area: <b>{{project.info.area}}</b></div>
       <div ng-show="project.status">Status: <b>{{project.status}}</b></div>
       <div ng-show="project.info.location">Location: <b>{{project.info.location}}</b></div>
+      <div>
+        Features:
+        <ul>
+          <li>100% Vasthu</li>
+          <li>Bank Loan support</li>
+        </ul>
+      </div>
       <span ng-show="project.gallery"><a ng-click="setGallery({{project.gallery}})">Gallery</a></span>
-      <span ng-show="project.brochure">| &nbsp<a href="{{project.brochure}}" target="_blank">More details</a></span>
+      <span ng-repeat="(title, link) in project.links">
+        | &nbsp<a href="{{link}}" target="_blank">{{title}}</a>
+      </span>
     </div>
   </div>
 </div>
