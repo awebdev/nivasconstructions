@@ -1,27 +1,29 @@
-<header ng-controller="HeaderCtrl as headerCtrl" ng-cloak>
-  <div class="logo">
-    <a ng-href="#"><img src="images/logo.png" alt="Nivas Constructions"/></a>
-  </div>
-  <div class="menu">
-    <ul>
-      <li ng-repeat="link in links | orderBy: 'id'">
-        <a ng-class="{active: isActive(link.url)}" ng-href="{{link.url}}">{{link.title}}</a>
-        <div ng-show="link.submenu">
-          <ul>
+<nav class="navbar navbar-default" role="navigation" ng-controller="HeaderCtrl" ng-cloak>
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="images/logo.png" alt="Nivas Constructions"/></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div collapse="isCollapsed" class="navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown" ng-repeat="link in links | orderBy: 'id'">
+          <a ng-show="!link.submenu" href="{{link.url}}" ng-click="collapseNavBar(link.url)">{{link.title}}</a>
+          <a ng-show="link.submenu" href="#" class="dropdown-toggle" data-toggle="dropdown">{{link.title}}</a>
+          <ul ng-show="link.submenu" class="dropdown-menu" role="menu">
             <li ng-repeat="menu in link.submenu">
-              <a ng-href="{{menu.url}}">{{menu.title}}</a>
+              <a href="{{menu.url}}" ng-click="collapseNavBar(link.url)">{{menu.title}}</a>
             </li>
           </ul>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="hamburger" ng-show="isMenuOpen" ng-click="isMenuOpen = false">
-    <div ng-repeat="link in links">
-      <a ng-class="{ active: isActive(link.url)}"  ng-href="{{link.url}}">{{link.title}}</a>
+        </li>
+      </ul>
     </div>
   </div>
-  <nav ng-hide="isMenuOpen" ng-click="isMenuOpen = !isMenuOpen">
-    <div class="hamburgerIcon"> ||| </div>
-  </nav>
-</header>
+</nav>

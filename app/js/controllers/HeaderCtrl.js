@@ -2,6 +2,8 @@ define(['angular'], function(angular) {
   'use strict';
 
   var HeaderCtrl = function($scope, $http, $location, $rootScope) {
+    $scope.isCollapsed = true;
+
     $http.get('api/menu')
       .success(function(data, status, headers, config) {
         $scope.links = data;
@@ -10,10 +12,11 @@ define(['angular'], function(angular) {
         console.log(status);
       });
 
-    $scope.isActive = function (viewLocation) {
-      return viewLocation === $location.path();
+    $scope.collapseNavBar = function() {
+      $scope.isCollapsed = true;
+      console.log($scope);
     };
-    
+
     $rootScope.$on( "$routeChangeStart", function(event, next, current) {
       ga('send', {
         'hitType': 'event',          // Required.

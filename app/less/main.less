@@ -1,40 +1,9 @@
-@grey: rgb(200, 200, 200);
-@green: #8AC007;
-@darkOrange: #f4821f;
-@dodgerBlue: #0096d6;
-
-@base: #f938ab;
-
-.box-shadow(@style, @c) when (iscolor(@c)) {
-  -webkit-box-shadow: @style @c;
-  -moz-box-shadow:    @style @c;
-  box-shadow:         @style @c;
-}
-.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
-  .box-shadow(@style, rgba(0, 0, 0, @alpha));
-}
-
-
-.blur(@px) {
-  -webkit-filter: blur(@px);
-  -moz-filter: blur(@px);
-  -o-filter: blur(@px);
-  -ms-filter: blur(@px);
-  filter: blur(@px);
-}
-
-.rotate(@deg) {
-  -webkit-transform: rotate(@deg);
-  -moz-transform:    rotate(@deg);
-  -ms-transform:     rotate(@deg);
-  -o-transform:      rotate(@deg);
-}
-
 @import (less) "../components/bootstrap/dist/css/bootstrap.css";
+@import "utils.less";
 @import "header.less";
-@import "home.less"; 
+@import "home.less";
 @import "projects.less";
-@import "about.less"; 
+@import "about.less";
 @import "contact.less";
 
 
@@ -51,7 +20,16 @@
 	max-width: 100%;
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}
+
+body{.gradientBackgroundTop(#ffffff,#cccccc)}
+
 body {
+  background-repeat: no-repeat;
   margin: 0px;
   font-family: Verdana, Geneva, sans-serif;
   overflow-x: hidden;
@@ -78,8 +56,7 @@ body {
   }
 
   .content {
-    padding: 20px 0px;
-    max-width: 80%;
+    padding: 20px 20px;
     margin: 0px auto;
 
     .clear {
@@ -94,9 +71,10 @@ body {
   }
 
   footer {
-    text-align: center;
-    .wrap {
-      width: 800px;
+	text-align: center;
+    #wrapper {
+      text-align: center;
+      width: 500px;
       margin: 0 auto;
       padding: 15px;
     }

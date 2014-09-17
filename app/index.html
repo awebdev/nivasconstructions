@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="dist/main.min.css" />
-    <script async type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL-O0qdtGAuEB6kYsBw87jcTsKilIFBW0"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL-O0qdtGAuEB6kYsBw87jcTsKilIFBW0"></script>
     <script>
       // Google Analytics
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -24,15 +24,19 @@
       });
     </script>
   </head>
-  <body ng-init="isMenuOpen = false">
-    <div ng-include src="'js/html/header.html'"></div>
-    <div id="content" class="content" ng-click="isMenuOpen = false" ng-cloak>
+  <body>
+    <header ng-include src="'js/html/header.html'"></header>
+    <div id="content" class="content" ng-cloak>
       <div ng-view autoscroll="" style="height:100%"></div>
     </div>
-    <footer>&copy; 2014 Nivas Constructions | <a href="#/contact">Contact Us</a> </footer>
+    <footer>
+      <div id="wrapper">
+        &copy;2014 Nivas Constructions | <a href="#/contact">Contact Us</a>
+      </div>
+    </footer>
 
     <!-- Embedd requireJs -->
     <script async data-main="dist/app" src="components/requirejs/require.js"></script>
-<!--     <script async data-main="js/index" src="components/requirejs/require.js"></script> -->
+<!--    <script async data-main="js/index" src="components/requirejs/require.js"></script> -->
   </body>
 </html>
