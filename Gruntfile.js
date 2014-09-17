@@ -59,6 +59,7 @@ module.exports = function(grunt) {
           {src: ['<%= config.app %>/components/requirejs/require.js'], dest: '<%= config.build %>', expand: true, filter: 'isFile'},
 
           // All folders and sub-folders
+          // all images are replaced by imagemin // keep this to copy non-images like fav.ico
           {src: ['<%= config.app %>/images/**'], dest: '<%= config.build %>', expand: true},
           {src: ['<%= config.app %>/fonts/**'], dest: '<%= config.build %>', expand: true},
           {src: ['<%= config.app %>/data/**'], dest: '<%= config.build %>', expand: true},
@@ -72,8 +73,21 @@ module.exports = function(grunt) {
           // {expand: true, flatten: true, src: ['path/**'], dest: 'dest/', filter: 'isFile'}
         ]
       }
+    },
+
+    htmlmin: {
+      dist: {                                      // Target
+        options: {                                 // Target options
+          removeComments: true,
+          collapseWhitespace: true,
+          minifyJS: true
+        },
+        files: {                                   // Dictionary of files
+          '<%= config.app %>/dist/app/index.html': '<%= config.app %>/index.html'     // 'destination': 'source'
+        }
+      }
     }
-});
+  });
 
   grunt.loadTasks('grunt');
 
@@ -91,6 +105,7 @@ module.exports = function(grunt) {
                      'requirejs:compile',
                      'clean:build',
                      'copy:build',
+                     'imagemin:all',
                      'default'
                    ]);
 };

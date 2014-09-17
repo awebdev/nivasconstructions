@@ -57,4 +57,17 @@ module.exports = function(grunt) {
       ext: '.min.css'
     }
   });
+
+  grunt.config('imagemin', {
+    all: {
+      files: [{
+        expand: true,
+        src:  [
+          'app/**/*.{png,jpg,gif}',
+        ],
+        rename: function(dest, src) {return 'build/' + src;}
+      }]
+    }
+  });
+
 };
