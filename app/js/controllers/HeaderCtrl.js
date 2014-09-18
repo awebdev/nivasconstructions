@@ -46,6 +46,10 @@ define(['angular'], function(angular) {
       });
     });
 
+    $rootScope.isArray = angular.isArray;
+    $rootScope.isNumber = angular.isNumber;
+    $rootScope.isString = angular.isString;
+
   };
 
   return HeaderCtrl;

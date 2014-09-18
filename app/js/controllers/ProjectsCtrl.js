@@ -11,9 +11,13 @@ define(['angular'], function(angular) {
         console.log(status);
       });
 
-    $rootScope.galleryCarousel = [];
     $scope.setGallery = function setGallery(gallery) {
       $rootScope.galleryCarousel = gallery;
+    };
+
+    $scope.setSpecs = function setSpecs(title, specs) {
+      $rootScope.projectTitle = title;
+      $rootScope.projectSpecs = specs;
     };
 
     $scope.type = function () {

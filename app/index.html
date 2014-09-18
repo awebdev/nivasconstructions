@@ -25,9 +25,10 @@
     </script>
   </head>
   <body>
-    <div class="overlay" ng-show="$root.gallery" ng-include src="'js/html/gallery.html'"></div>
+    <div class="overlay" ng-show="$root.galleryCarousel" init="$root.galleryCarousel = []" ng-include src="'js/html/gallery.html'"></div>
+    <div class="overlay" ng-show="$root.projectSpecs" init="$root.projectSpecs = []" ng-include src="'js/html/projectSpecs.html'"></div>
     <header ng-include src="'js/html/header.html'"></header>
-    <div id="content" class="content" ng-cloak>
+    <div id="content" ng-cloak>
       <div ng-view autoscroll="" style="height:100%"></div>
     </div>
     <footer>

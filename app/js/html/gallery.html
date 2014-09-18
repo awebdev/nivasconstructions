@@ -1,10 +1,12 @@
-<div class="gallery">
-  <div ng-click="$root.galleryCarousel = []" class="closeGallery">
+<div id="wrapper">
+  <div ng-click="$root.galleryCarousel = []" class="clear">
     Close X
   </div>
-  <carousel>
-    <slide ng-repeat="image in $root.galleryCarousel">
-      <img ng-src="{{image}}">
-    </slide>
-  </carousel>
+  <div class="content">
+    <carousel>
+      <slide ng-repeat="image in $root.galleryCarousel">
+        <img ng-src="{{image}}">
+      </slide>
+    </carousel>
+  </div>
 </div>

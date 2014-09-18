@@ -1,0 +1,20 @@
+<div id="wrapper">
+  <div ng-click="$root.projectSpecs = []" class="clear">
+    Close X
+  </div>
+  <div class="content">
+    <h2 class="title">{{$root.projectTitle}}</h2>
+    <ul>
+      <li ng-repeat="(title, spec) in $root.projectSpecs">
+        <b>{{title}}</b>:
+        <ul>
+          <li ng-repeat="(subTitle, subSpec) in spec">
+            <span ng-show="$root.isNumber(subTitle)">{{subSpec}}</span>
+            <span ng-show="!$root.isNumber(subTitle)">{{subTitle}}:</span>
+            <ul><li ng-repeat="(subSubTitle, subSubSpec) in subSpec">{{subSubSpec}}</li></ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

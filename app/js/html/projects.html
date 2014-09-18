@@ -9,7 +9,6 @@
         Flats: <b>{{project.info.flats}}</b><span ng-show="project.info.flatType">, <b>{{project.info.flatType}}</b></span>
       </div>
       <div ng-show="project.info.area">Area: <b>{{project.info.area}}</b></div>
-      <div ng-show="project.status">Status: <b>{{project.status}}</b></div>
       <div ng-show="project.info.location">Location: <b>{{project.info.location}}</b></div>
       <div>
         Features:
@@ -19,6 +18,9 @@
         </ul>
       </div>
       <span ng-show="project.gallery"><a ng-click="setGallery({{project.gallery}})">Gallery</a></span>
+      <span ng-show="project.specs">
+        | &nbsp<a ng-click="setSpecs(project.name, project.specs)">Specifications</a>
+      </span>
       <span ng-repeat="(title, link) in project.links">
         | &nbsp<a ng-href="{{link}}" target="_blank">{{title}}</a>
       </span>
