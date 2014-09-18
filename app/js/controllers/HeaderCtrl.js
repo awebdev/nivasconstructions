@@ -12,9 +12,25 @@ define(['angular'], function(angular) {
         console.log(status);
       });
 
-    $scope.collapseNavBar = function() {
+    $scope.collapseNavBar = function collapseNavBar() {
       $scope.isCollapsed = true;
-      console.log($scope);
+    };
+
+    $scope.isActive = function isActive(path) {
+      var route = '#' + $location.path();
+
+      if(angular.isArray(path)) {
+        var isActive = false;
+        angular.forEach(path, function(value, key) {
+          if(value.url == route){
+            isActive = true;
+            return;
+          }
+        });
+        return isActive;
+      } else {
+        return path == route;
+      }
     };
 
     $rootScope.$on( "$routeChangeStart", function(event, next, current) {
