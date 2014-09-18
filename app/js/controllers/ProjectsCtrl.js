@@ -1,20 +1,20 @@
 define(['angular'], function(angular) {
   'use strict';
 
-  var ProjectsCtrl = function($scope, $http, $location) {
+  var ProjectsCtrl = function($scope, $http, $location, $rootScope) {
     $http.get('/api/projects', { cache: true})
       .success(function(data, status, headers, config) {
         $scope.projects = data;
         $scope.gallery = [];
-
-        $scope.setGallery = function setGallery(gallery) {
-          $scope.gallery = gallery;
-        };
-
       })
       .error(function(data, status, headers, config) {
         console.log(status);
       });
+
+    $rootScope.galleryCarousel = [];
+    $scope.setGallery = function setGallery(gallery) {
+      $rootScope.galleryCarousel = gallery;
+    };
 
     $scope.type = function () {
       var location = $location.path().split('/');

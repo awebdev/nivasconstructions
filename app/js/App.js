@@ -10,7 +10,7 @@ define(['angular', 'controllers/HeaderCtrl', 'controllers/HomeCtrl', 'controller
   var App = angular.module('myApp', ['ngRoute', 'ngTouch', 'ui.bootstrap', 'google-maps', 'ngSanitize'])
                   .controller('HeaderCtrl', ['$scope', '$http', '$location', '$rootScope', HeaderCtrl])
                   .controller('HomeCtrl', ['$scope', '$http', HomeCtrl])
-                  .controller('ProjectsCtrl', ['$scope', '$http', '$location', ProjectsCtrl])
+                  .controller('ProjectsCtrl', ['$scope', '$http', '$location', '$rootScope', ProjectsCtrl])
                   .controller('AboutCtrl', ['$scope', '$http', AboutCtrl])
                   .controller('ContactCtrl', ['$scope', '$http', ContactCtrl])
                   .service('Utils', Utils)

@@ -1,14 +1,4 @@
 <div class="projects">
-  <div class="gallery" ng-show="gallery">
-    <div ng-click="gallery = false" class="closeGallery">
-      Close X
-    </div>
-    <carousel>
-      <slide ng-repeat="image in gallery">
-        <img ng-src="{{image}}">
-      </slide>
-    </carousel>
-  </div>
   <div class="project" ng-repeat="(id, project) in projects | filter: {status: type()}| orderBy:'priority'" data-id="{{id}}">
     <div class="name">{{project.name}}</div>
     <div>
