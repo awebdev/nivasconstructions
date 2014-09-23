@@ -25,18 +25,17 @@
     </script>
   </head>
   <body>
-    <div class="overlay" ng-show="$root.galleryCarousel" init="$root.galleryCarousel = []" ng-include src="'js/html/gallery.html'"></div>
-    <div class="overlay" ng-show="$root.projectSpecs" init="$root.projectSpecs = []" ng-include src="'js/html/projectSpecs.html'"></div>
-    <header ng-include src="'js/html/header.html'"></header>
-    <div id="content" ng-cloak>
-      <div ng-view autoscroll="" style="height:100%"></div>
-    </div>
-    <footer>
-      <div id="wrapper">
-        &copy;2014 Nivas Constructions | <a href="#/contact">Contact Us</a>
+    <div id="wrapper">
+      <div class="overlay" ng-show="$root.galleryCarousel" init="$root.galleryCarousel = []" ng-include src="'js/html/gallery.html'"></div>
+      <div class="overlay" ng-show="$root.projectSpecs" init="$root.projectSpecs = []" ng-include src="'js/html/projectSpecs.html'"></div>
+      <header ng-include src="'js/html/header.html'"></header>
+      <div id="content" ng-cloak>
+        <div ng-view autoscroll="" style="height:100%"></div>
       </div>
-    </footer>
-
+      <footer>
+        &copy;2014 Nivas Constructions | <a href="#/contact">Contact Us</a>
+      </footer>
+    </div>
     <!-- Embedd requireJs -->
     <script async data-main="dist/app" src="components/requirejs/require.js"></script>
 <!--    <script async data-main="js/index" src="components/requirejs/require.js"></script> -->
