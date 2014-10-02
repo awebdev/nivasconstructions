@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
+    "body-parser": "1.0.2",
     "express": "^4.8.7",
     "grunt": "~0.4.1",
     "grunt-connect-proxy": "~0.1.5",
@@ -21,8 +22,8 @@
     "grunt-open": "~0.2.0",
     "matchdep": "~0.1.2",
     "mongoskin": "^1.4.4",
-    "source-map-support": "^0.2.7",
-    "body-parser": "1.0.2"
+    "request": "^2.44.0",
+    "source-map-support": "^0.2.7"
   },
   "engines": {
     "node": ">=0.10.29"

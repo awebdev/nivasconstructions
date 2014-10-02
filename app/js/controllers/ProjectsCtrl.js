@@ -8,7 +8,7 @@ define(['angular'], function(angular) {
         $scope.gallery = [];
       })
       .error(function(data, status, headers, config) {
-        console.log(status);
+        $http.post('/log', {ctrl: 'ProjectsCtrl', data: data, status: status});
       });
 
     $scope.setGallery = function setGallery(gallery) {

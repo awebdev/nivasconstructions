@@ -7,7 +7,7 @@ define(['angular'], function(angular) {
         $scope.carousels = data;
       })
       .error(function(data, status, headers, config) {
-        console.log(status);
+        $http.post('/log', {ctrl: 'HomeCtrl', data: data, status: status});
       });
   };
 

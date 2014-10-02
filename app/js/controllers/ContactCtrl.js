@@ -8,7 +8,7 @@ define(['angular'], function(angular) {
         $scope.company = data.company;
       })
       .error(function(data, status, headers, config) {
-        console.log(status);
+        $http.post('/log', {ctrl: 'ContactCtrl', data: data, status: status});
       });
 
 

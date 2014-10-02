@@ -9,7 +9,7 @@ define(['angular'], function(angular) {
         $scope.links = data;
       })
       .error(function(data, status, headers, config) {
-        console.log(status);
+        $http.post('/log', {ctrl: 'HeaderCtrl', data: data, status: status});
       });
 
     $scope.collapseNavBar = function collapseNavBar() {
