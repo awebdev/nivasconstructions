@@ -9,6 +9,7 @@ define(['angular'], function(angular) {
       })
       .error(function(data, status, headers, config) {
         $http.post('/log', {ctrl: 'ContactCtrl', data: data, status: status});
+        window.location.href = "/SNA.html";
       });
 
 

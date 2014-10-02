@@ -10,6 +10,7 @@ define(['angular'], function(angular) {
       })
       .error(function(data, status, headers, config) {
         $http.post('/log', {ctrl: 'HeaderCtrl', data: data, status: status});
+        window.location.href = "/SNA.html";
       });
 
     $scope.collapseNavBar = function collapseNavBar() {
