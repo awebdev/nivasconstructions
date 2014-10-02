@@ -58,7 +58,7 @@ app.use('/', express.static(__dirname + '/app'));
 app.use(function(req, res, next){
   console.log('%s %s', req.method, req.url);
   req.method = 'get';
-  res.redirect('/404.html');
+  res.redirect('/404.html#' + req.url);
 });
 
 app.listen(port, function() {
