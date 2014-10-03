@@ -13,7 +13,7 @@ module.exports = function(grunt) {
       dist: 'dist', // distribution
 
       host: 'localhost',
-      appServerPort: 8080,
+      appServerPort: 8000,
       allJsFiles: '<%= config.app %>/js/*.js'
     },
 
@@ -93,6 +93,7 @@ module.exports = function(grunt) {
 
   // default task
   grunt.registerTask('default', 'Run application', [
+    'requirejs:compile',
     'jshint:all',
     'less',
     'cssmin:minify',

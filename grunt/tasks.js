@@ -19,8 +19,8 @@ module.exports = function(grunt) {
   // watch files for changes
   grunt.config('watch', {
     js: {
-      files: '<%= config.app %>/**/*.js',
-      tasks: ['jshint:all'],
+      files: '<%= config.app %>/js/**/*.js',
+      tasks: ['jshint:all', 'requirejs:compile'],
       options: {
         livereload: true
       }

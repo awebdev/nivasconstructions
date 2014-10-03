@@ -6,7 +6,7 @@ define(['angular', 'services/Utils'],
     var templateDir = 'js/html/';
 
     // configure html5 to get links working on jsfiddle
-    // $locationProvider.html5Mode(true).hashPrefix('!');
+    $locationProvider.hashPrefix('!');
 
     $routeProvider
       .when('/', {
