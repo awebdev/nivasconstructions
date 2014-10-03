@@ -52,7 +52,8 @@ module.exports = function(grunt) {
         files: [
           // Specific Files
           {src: ['server.js'], dest: '<%= config.build %>', expand: true, filter: 'isFile'},
-          {src: ['package.json'], dest: '<%= config.build %>', expand: true, filter: 'isFile'},
+          {src: ['DB.js'], dest: '<%= config.build %>', expand: true, filter: 'isFile'},
+          // {src: ['package.json'], dest: '<%= config.build %>', expand: true, filter: 'isFile'},
           {src: ['<%= config.app %>/*.html'], dest: '<%= config.build %>', expand: true, filter: 'isFile'},
           {src: ['<%= config.app %>/sitemap.xml'], dest: '<%= config.build %>', expand: true, filter: 'isFile'},
           {src: ['<%= config.app %>/robots.txt'], dest: '<%= config.build %>', expand: true, filter: 'isFile'},
