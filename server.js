@@ -3,8 +3,9 @@ var fs = require('fs');
 var bodyParser = require('body-parser');
 var mongoskin = require('mongoskin');
 var request = require('request');
+var DB = require('./DB.js');
 
-var db = mongoskin.db("mongodb://127.0.0.1:27017/nivas", {native_parser:true});
+var mongodb = mongoskin.db("mongodb://127.0.0.1:27017/nivas", {native_parser:true});
 
 var app = express();
 var port = 8080;
@@ -15,44 +16,15 @@ var port = 8080;
 app.use(bodyParser());
 
 app.param('collectionName', function(req, res, next, collectionName){
-  req.collection = db.collection(collectionName);
+  req.collection = mongodb.collection(collectionName);
   return next();
 });
 
-app.get('/api/:collectionName', function(req, res, next) {
-  req.collection.find({} ,{sort: {'_id': 1}}).toArray(function(e, results){
-    if (e) return next(e);
-    res.send(results);
-  });
-});
-
-app.post('/api/:collectionName', function(req, res, next) {
-  req.collection.insert(req.body, {}, function(e, results){
-    if (e) return next(e);
-    res.send(results);
-  });
-});
-
-app.get('/api/:collectionName/:id', function(req, res, next) {
-  req.collection.findOne({'_id': req.params.id}, function(e, result){
-    if (e) return next(e);
-    res.send(result);
-  });
-});
-
-app.put('/api/:collectionName/:id', function(req, res, next) {
-  req.collection.updateById(req.params.id, {$set: req.body}, {safe: true, multi: false}, function(e, result){
-    if (e) return next(e);
-    res.send((result === 1) ? {msg:'success'} : {msg: 'error'});
-  });
-});
-
-app.delete('/api/:collectionName/:id', function(req, res, next) {
-  req.collection.removeById(req.params.id, function(e, result){
-    if (e) return next(e);
-    res.send((result === 1)?{msg: 'success'} : {msg: 'error'});
-  });
-});
+app.get('/api/:collectionName', DB.getCollection);
+app.post('/api/:collectionName', DB.insertCollection);
+app.get('/api/:collectionName/:id', DB.findById);
+app.put('/api/:collectionName/:id', DB.updateById);
+app.delete('/api/:collectionName/:id', DB.removeById);
 
 
 /*
