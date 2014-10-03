@@ -1,8 +1,8 @@
 var express = require('express');
-var fs = require('fs');
 var bodyParser = require('body-parser');
-var request = require('request');
 var DB = require('./DB.js');
+var fs = require('fs');
+var request = require('request');
 
 var app = express();
 var port = 8080;
@@ -34,6 +34,41 @@ app.post('/log', function(req, res, next) {
   });
 });
 
+/*
+  Handle Crawler requests
+    Ref: http://www.ng-newsletter.com/posts/serious-angular-seo.html
+*/
+app.use(function(req, res, next) {
+  var fragment = req.query._escaped_fragment_;
+
+  // If there is no fragment in the query params
+  // then we're not serving a crawler
+  if (!fragment) return next();
+
+  // If the fragment is empty, serve the
+  // index page
+  if (fragment === "" || fragment === "/")
+    fragment = "/index.html";
+
+  // If fragment does not start with '/'
+  // prepend it to our fragment
+  if (fragment.charAt(0) !== "/")
+    fragment = '/' + fragment;
+
+  // If fragment does not end with '.html'
+  // append it to the fragment
+  if (fragment.indexOf('.html') == -1)
+    fragment += ".html";
+
+  // Serve the static html snapshot
+  try {
+    var file = __dirname + "/snapshots" + fragment;
+    res.sendFile(file);
+  } catch (err) {
+    res.send(404);
+  }
+});
+
 // Serve App
 app.use('/', express.static(__dirname + '/app'));
 
@@ -49,7 +84,6 @@ app.use(function(req, res, next){
   res.status(404);
   res.sendFile(__dirname + '/app/404.html');
 });
-
 
 app.listen(port, function() {
   console.log('listening localhost:' + port);

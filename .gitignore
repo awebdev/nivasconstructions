@@ -6,3 +6,4 @@ app/js/require
 *.css
 build
 errorlog
+snapshots

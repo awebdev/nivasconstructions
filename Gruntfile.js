@@ -65,7 +65,8 @@ module.exports = function(grunt) {
           {src: ['<%= config.app %>/fonts/**'], dest: '<%= config.build %>', expand: true},
           {src: ['<%= config.app %>/data/**'], dest: '<%= config.build %>', expand: true},
           {src: ['<%= config.app %>/dist/**'], dest: '<%= config.build %>', expand: true},
-          {src: ['<%= config.app %>/js/html/**'], dest: '<%= config.build %>', expand: true}
+          {src: ['<%= config.app %>/js/html/**'], dest: '<%= config.build %>', expand: true},
+          {src: ['snapshots/**'], dest: '<%= config.build %>', expand: true},
 
           // makes all src relative to cwd
           // {expand: true, cwd: 'path/', src: ['**'], dest: 'dest/'},
