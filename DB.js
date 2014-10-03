@@ -1,3 +1,11 @@
+var mongoskin = require('mongoskin');
+var mongodb = mongoskin.db("mongodb://127.0.0.1:27017/nivas", {native_parser:true});
+
+exports.useCollection = function(req, res, next, collectionName){
+    req.collection = mongodb.collection(collectionName);
+    return next();
+  }
+
 exports.getCollection = function(req, res, next) {
     req.collection.find({} ,{sort: {'_id': 1}}).toArray(function(e, results){
       if (e) return next(e);

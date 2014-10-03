@@ -1,11 +1,8 @@
 var express = require('express');
 var fs = require('fs');
 var bodyParser = require('body-parser');
-var mongoskin = require('mongoskin');
 var request = require('request');
 var DB = require('./DB.js');
-
-var mongodb = mongoskin.db("mongodb://127.0.0.1:27017/nivas", {native_parser:true});
 
 var app = express();
 var port = 8080;
@@ -14,12 +11,7 @@ var port = 8080;
     DATABASE OPERATIONS
 */
 app.use(bodyParser());
-
-app.param('collectionName', function(req, res, next, collectionName){
-  req.collection = mongodb.collection(collectionName);
-  return next();
-});
-
+app.param('collectionName', DB.useCollection);
 app.get('/api/:collectionName', DB.getCollection);
 app.post('/api/:collectionName', DB.insertCollection);
 app.get('/api/:collectionName/:id', DB.findById);
