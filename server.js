@@ -3,9 +3,12 @@ var bodyParser = require('body-parser');
 var DB = require('./DB.js');
 var fs = require('fs');
 var request = require('request');
+var compression = require('compression');
 
-var app = express();
 var port = 8080;
+var app = express();
+
+app.use(compression());
 
 /*
     DATABASE OPERATIONS
