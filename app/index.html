@@ -24,6 +24,27 @@
         'title': 'HomeCtrl'
       });
     </script>
+    <script type="application/ld+json">
+      // Data for Google crawlers
+      {
+        "@context" : "http://schema.org",
+        "@type" : "LocalBusiness",
+        "name" : "Nivas Constructions",
+        "image" : "http://www.nivasconstructions.in/images/logo.png",
+        "telephone" : "+91-9246559119",
+        "email" : "nivasconstructions@hotmail.com",
+        "address" : {
+          "@type" : "PostalAddress",
+          "streetAddress" : "Flat No. 101, ’Gurunivas’ #18-83 lane Adj. Sri Chaitanya college, Kamalanagar, Dilsukhnagar",
+          "addressLocality" : "Hyderabad",
+          "addressRegion" : "Andhra Pradesh",
+          "postalCode" : "500036"
+        },
+        "openingHours": [
+          "Mo-Fr 09:00-17:00"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div class="overlay" ng-show="$root.galleryCarousel" init="$root.galleryCarousel = []" ng-include src="'js/html/gallery.html'"></div>
