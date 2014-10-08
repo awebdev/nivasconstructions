@@ -55,6 +55,7 @@ module.exports = function(grunt) {
           {src: ['DB.js'], dest: '<%= config.build %>', expand: true, filter: 'isFile'},
           // {src: ['package.json'], dest: '<%= config.build %>', expand: true, filter: 'isFile'},
           {src: ['<%= config.app %>/*.html'], dest: '<%= config.build %>', expand: true, filter: 'isFile'},
+          {src: ['<%= config.app %>/favicon.ico'], dest: '<%= config.build %>', expand: true, filter: 'isFile'},
           {src: ['<%= config.app %>/sitemap.xml'], dest: '<%= config.build %>', expand: true, filter: 'isFile'},
           {src: ['<%= config.app %>/robots.txt'], dest: '<%= config.build %>', expand: true, filter: 'isFile'},
           {src: ['<%= config.app %>/components/requirejs/require.js'], dest: '<%= config.build %>', expand: true, filter: 'isFile'},
