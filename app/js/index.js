@@ -1,7 +1,6 @@
 requirejs.config({
   baseUrl: 'js',
   paths: {
-    'jquery': '../components/jquery/dist/jquery',
     'angular': '../components/angular/angular',
     'angular-route': '../components/angular-route/angular-route',
     'angular-sanitize': '../components/angular-sanitize/angular-sanitize',
@@ -12,7 +11,6 @@ requirejs.config({
   },
   shim: {
     "angular": {
-      deps: ['jquery'],
       exports: "angular"
     },
     'angular-route': {
