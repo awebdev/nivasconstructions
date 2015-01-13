@@ -6,14 +6,14 @@
     "app/components"
   ],
   "devDependencies": {
-    "jquery": "latest",
-    "angular": "latest",
-    "angular-sanitize": "latest",
-    "angular-route": "latest",
-    "angular-touch": "latest",
-    "angular-bootstrap": "latest",
-    "angular-google-maps": "latest",
-    "bootstrap": "latest",
-    "requirejs": "latest"
+    "jquery": "2.1.1",
+    "angular": "1.2.22",
+    "angular-sanitize": "1.2.22",
+    "angular-route": "1.2.22",
+    "angular-touch": "1.2.22",
+    "angular-bootstrap": "0.12.0",
+    "angular-google-maps": "1.2.0",
+    "bootstrap": "~3.3.1",
+    "requirejs": "~2.1.15"
   }
 }
