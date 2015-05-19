@@ -5,7 +5,6 @@ module.exports = function(grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({
-
     config: {
       projectRoot: '',
       app: 'app', // app source
@@ -100,8 +99,6 @@ module.exports = function(grunt) {
     'jshint:all',
     'less',
     'cssmin:minify',
-    'connect:app',
-    'open:app',
     'watch'
   ]);
 

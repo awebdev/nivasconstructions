@@ -11,16 +11,30 @@ var app = express();
 app.use(compression());
 
 /*
+  Proxy handler for dev env
+*/
+var proxyHandler = function proxyHandler(req, res) {
+  request('http://71f2b9384c.test-url.ws/' + req.url).pipe(res);
+};
+
+/*
     DATABASE OPERATIONS
 */
 app.use(bodyParser());
-app.param('collectionName', DB.useCollection);
-app.get('/api/:collectionName', DB.getCollection);
-app.post('/api/:collectionName', DB.insertCollection);
-app.get('/api/:collectionName/:id', DB.findById);
-app.put('/api/:collectionName/:id', DB.updateById);
-app.delete('/api/:collectionName/:id', DB.removeById);
 
+if(process.env.NIVAS_ENV && process.env.NIVAS_ENV === 'dev') {
+  app.get('/api/*', proxyHandler);
+  app.post('/api/*', proxyHandler);
+  app.put('/api/*', proxyHandler);
+  app.delete('/api/*', proxyHandler);
+} else {
+  app.param('collectionName', DB.useCollection);
+  app.get('/api/:collectionName', DB.getCollection);
+  app.post('/api/:collectionName', DB.insertCollection);
+  app.get('/api/:collectionName/:id', DB.findById);
+  app.put('/api/:collectionName/:id', DB.updateById);
+  app.delete('/api/:collectionName/:id', DB.removeById);
+}
 
 /*
   LOG Service
