@@ -22,7 +22,7 @@ var proxyHandler = function proxyHandler(req, res) {
 */
 app.use(bodyParser());
 
-if(process.env.NIVAS_ENV && process.env.NIVAS_ENV === 'dev') {
+if(process.env.NODE_ENV === 'development') {
   app.get('/api/*', proxyHandler);
   app.post('/api/*', proxyHandler);
   app.put('/api/*', proxyHandler);
