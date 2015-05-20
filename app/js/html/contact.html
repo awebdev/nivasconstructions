@@ -3,7 +3,7 @@
       <div class="individual" ng-repeat="individual in individuals">
         <div class="name">{{individual.name}}</div>
         <div class="title">{{individual.title}}</div>
-        <div class="phone">Phone: {{individual.phone}}</div>
+        <div class="phone" ng-if="individual.phone">Phone: {{individual.phone}}</div>
       </div>
     </section>
   <div class="info">
