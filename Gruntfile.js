@@ -1,3 +1,5 @@
+var requireJsConfig = require('./app/js/requireJsConfig');
+
 module.exports = function(grunt) {
   'use strict';
 
@@ -8,7 +10,7 @@ module.exports = function(grunt) {
     config: {
       projectRoot: '',
       app: 'app', // app source
-      build: 'build', // build dir for runtime image
+      build: '.build', // build dir for runtime image
       dist: 'dist', // distribution
 
       host: 'localhost',
@@ -24,7 +26,9 @@ module.exports = function(grunt) {
           baseUrl: '<%= config.app %>/js',
           out: '<%= config.app %>/dist/app.js',
           optimize: 'uglify2',
-          preserveLicenseComments: true
+          preserveLicenseComments: true,
+          paths: requireJsConfig.paths,
+          shim: requireJsConfig.shim
         }
       }
     },

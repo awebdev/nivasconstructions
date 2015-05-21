@@ -87,7 +87,7 @@ app.use(function(req, res, next) {
 });
 
 // Serve App
-app.use('/', express.static(__dirname + '/app'));
+app.use('/', express.static(__dirname + '/.build/app'));
 
 // handle unknown paths
 app.use(function(req, res, next){
